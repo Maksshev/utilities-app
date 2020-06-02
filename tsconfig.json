@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "baseUrl": "./server",
+    "allowJs": false
+  },
+  "include": [
+    "./server/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "client"
+  ]
+}
