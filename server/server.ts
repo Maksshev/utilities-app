@@ -1,15 +1,4 @@
-import {Person} from './Person'
+import {App} from "./app";
 
-let person: Person = new Person('Valera');
-
-export class Server {
-    private person: Person;
-
-    constructor(person: Person) {
-        this.person = person;
-    }
-
-    public getPersonsName(): string {
-        return this.person.getName();
-    }
-}
+var app = new App();
+app.run(parseInt(process.env.port) || 3000);
