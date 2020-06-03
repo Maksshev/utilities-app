@@ -1,11 +1,12 @@
-import express, {Express} from "express";
+import express, {Application} from "express";
+import {App} from "./interfaces/App";
 import {ExpressExtensions} from "./types/express";
-import Server = ExpressExtensions.Server;
+import ExpressServer = ExpressExtensions.ExpressServer;
 
 
-class App {
-    public run(port: number): Server {
-        const app: Express = express();
+class AppImpl implements App {
+    public run(port: number): ExpressServer {
+        const app: Application = express();
 
         app.get('/', (req, res, next): void => {
             res.json({
@@ -19,4 +20,4 @@ class App {
     }
 }
 
-export {App};
+export {AppImpl};

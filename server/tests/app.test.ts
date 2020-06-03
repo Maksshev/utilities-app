@@ -1,13 +1,14 @@
-import {App} from "../App";
+import {AppImpl} from "../AppImpl";
+import {App} from "../interfaces/App";
 import request from "supertest";
 import {ExpressExtensions} from "../types/express";
-import Server = ExpressExtensions.Server;
+import ExpressServer = ExpressExtensions.ExpressServer;
 
-const app: App = new App();
+const app: App = new AppImpl();
 
 describe('Hello world', () => {
     it('Should match Hello World json', () => {
-        const server: Server = app.run(3000);
+        const server: ExpressServer = app.run(3000);
         return request(server)
             .get('/')
             .expect(200)

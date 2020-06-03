@@ -1,6 +1,6 @@
 
 declare namespace ExpressExtensions {
-    interface Server {
+    interface ExpressServer {
         close(): void;
     }
 }
