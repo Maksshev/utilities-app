@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --forceExit --coverage --verbose",
-    "dev": "nodemon"
+    "dev": "concurrently \"brew services start mongodb-community@4.2\" \"nodemon\"",
+    "stop": "brew services stop mongodb-community@4.2"
   },
   "author": "",
   "license": "ISC",
