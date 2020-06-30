@@ -49,4 +49,37 @@ describe('UserModel test', () => {
         const newUser: UserModel = new UserModelImpl();
         expect(user.equals(newUser)).toBe(false);
     })
+
+    it('Should return user token', () => {
+        expect(user.getToken()).toBe('token')
+    })
+
+    it('Should return null if no token', () => {
+        expect(user.getToken()).toBe(null);
+    })
+
+    it('Should set new first name', () => {
+        user.setFirstName('Kolia');
+        expect(user.getFirstName()).toBe('Kolia');
+    })
+
+    it('Should set new last name', () => {
+        user.setLastName('Kolia');
+        expect(user.getLastName()).toBe('Kolia');
+    })
+
+    it('Should set new email', () => {
+        user.setEmail('Kolia@gmail.com');
+        expect(user.getEmail()).toBe('Kolia@gmail.com');
+    })
+
+    it('Should set new password', () => {
+        user.setPassword('1qwe2ASD');
+        expect(user.getPassword()).toBe('1qwe2ASD');
+    })
+
+    it('Should set new token', () => {
+        user.setToken('1qwe2ASD');
+        expect(user.getToken()).toBe('1qwe2ASD');
+    })
 })

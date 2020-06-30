@@ -15,7 +15,7 @@ class UserDao implements Dao<UserModel> {
         return null;
     }
 
-    update(id: string, updater: Updater): boolean {
+    update(updater: Updater): boolean {
         return updater.updateInDatabase();
     }
 }

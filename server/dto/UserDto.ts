@@ -4,43 +4,55 @@ class UserDto {
     private _lastName: string;
     private _email: string;
     private _password: string;
-    readonly _id: string;
+    private _id: string;
 
 
-    get id(): string {
+    getID() {
         return this._id;
     }
 
-    get firstName(): string {
+    getFirstName() {
         return this._firstName;
     }
 
-    set firstName(value: string) {
-        this._firstName = value;
-    }
-
-    get lastName(): string {
+    getLastName() {
         return this._lastName;
     }
 
-    set lastName(value: string) {
-        this._lastName = value;
-    }
-
-    get email(): string {
+    getEmail() {
         return this._email;
     }
 
-    set email(value: string) {
-        this._email = value;
-    }
-
-    get password(): string {
+    getPassword() {
         return this._password;
     }
 
-    set password(value: string) {
-        this._password = value;
+    setFirstName(firstName: string) {
+        this._firstName = firstName;
+    }
+
+    setLastName(lastName: string) {
+        this._lastName = lastName;
+    }
+
+    setEmail(email: string) {
+        this._email = email;
+    }
+
+    setPassword(password: string) {
+        this._password = password;
+    }
+
+    setID(id: string) {
+        this._id = id;
+    }
+
+    equals(userDto: UserDto) {
+        return this.getID() === userDto.getID() &&
+            this.getLastName() === userDto.getLastName() &&
+            this.getFirstName() === userDto.getFirstName() &&
+            this.getPassword() === userDto.getPassword() &&
+            this.getEmail() === userDto.getEmail();
     }
 }
 

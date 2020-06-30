@@ -30,9 +30,30 @@ class UserModelImpl implements UserModel {
         return null;
     }
 
+    getToken(): string {
+        return null;
+    }
+
     equals(userModel: UserModelImpl): boolean {
         return Boolean(this.getID() === userModel.getID());
     }
+
+    setEmail(email: string): void {
+    }
+
+    setFirstName(firstName: string): void {
+    }
+
+    setLastName(lastName: string): void {
+    }
+
+    setPassword(password: string): void {
+    }
+
+    setToken(token: string): void {
+    }
+
+
 }
 
 export {UserModelImpl};

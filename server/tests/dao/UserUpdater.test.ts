@@ -2,10 +2,10 @@ import {UserDto} from "../../dto/UserDto";
 import {UserUpdater} from "../../dao/user/UserUpdater";
 
 const userDTO: UserDto = new UserDto();
-userDTO.firstName = 'Valera';
-userDTO.lastName = 'Valera';
-userDTO.email = 'valera@gmail.com';
-userDTO.password = '1qaz2WSX';
+userDTO.setFirstName('Valera');
+userDTO.setLastName('Valera');
+userDTO.setEmail('valera@gmail.com');
+userDTO.setPassword('1qaz2WSX');
 
 const userUpdater = new UserUpdater(userDTO);
 
@@ -20,4 +20,5 @@ describe('UserUpdater test', () => {
         const failedUserUpdater: UserUpdater = new UserUpdater(failedUserDTO);
         expect(failedUserUpdater.updateInDatabase()).toBe(false);
     })
+
 })
