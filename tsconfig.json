@@ -6,7 +6,8 @@
     "outDir": "./dist",
     "baseUrl": "./server",
     "allowJs": false,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "inlineSources": true
   },
   "include": [
     "./server/**/*.ts"

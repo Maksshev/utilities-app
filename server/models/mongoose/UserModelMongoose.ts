@@ -20,15 +20,15 @@ const UserSchema: Schema = new Schema({
         type: String,
         maxlength: 100
     }
-})
+}, {timestamps: true})
 
-interface IUser extends Document {
+interface UserDocument extends Document {
     email: string,
     password: string,
     firstName: string,
     lastName: string
 }
 
-const UserModelMongoose: Model<IUser> = model<IUser>('User', UserSchema);
+const UserModelMongoose: Model<UserDocument> = model<UserDocument>('User', UserSchema);
 
-export {UserModelMongoose};
+export {UserModelMongoose, UserDocument};

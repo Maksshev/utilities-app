@@ -1,5 +1,5 @@
 {
   "watch": ["server"],
   "ext": "ts",
-  "exec": "ts-node ./server/main.ts"
+  "exec": "ts-node -r dotenv/config  ./server/main.ts"
 }

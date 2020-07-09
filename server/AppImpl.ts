@@ -3,6 +3,7 @@ import {App} from "./interfaces/App";
 import {ExpressExtensions} from "./types/express";
 import ExpressServer = ExpressExtensions.ExpressServer;
 import {MongoConnector} from "./db/MongoConnector";
+import {userRouter} from "./controllers/UserController";
 
 
 class AppImpl implements App {
@@ -12,7 +13,13 @@ class AppImpl implements App {
 
         const app: Application = express();
 
-        app.get('/', (req, res, next): void => {
+        //Middleware
+        app.use(express.json());
+
+        //TODO: Implement version manager through .env
+        app.use('/v1', userRouter);
+
+        app.get('/', (req, res): void => {
             res.json({
                 message: 'Hello World!'
             })

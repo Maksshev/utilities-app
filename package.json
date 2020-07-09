@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --setupFiles dotenv/config --forceExit --coverage --verbose --detectOpenHandles",
     "dev1": "concurrently \"brew services start mongodb-community@4.2\" \"nodemon\"",
-    "dev": "concurrently \"-r dotenv/config server/main.ts\" \"nodemon\"",
+    "dev": "nodemon",
     "stop": "brew services stop mongodb-community@4.2"
   },
   "author": "",

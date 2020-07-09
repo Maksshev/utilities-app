@@ -1,6 +1,13 @@
 import {UserModel} from "../interfaces/models/UserModel";
+import {UserDocument} from "./mongoose/UserModelMongoose";
 
 class UserModelImpl implements UserModel {
+
+    private mongooseUserDocument: UserDocument;
+
+    constructor(mongooseUserDocument: UserDocument) {
+        this.mongooseUserDocument = mongooseUserDocument;
+    }
 
     getEmail(): string {
         return null;
@@ -53,7 +60,9 @@ class UserModelImpl implements UserModel {
     setToken(token: string): void {
     }
 
-
+    getUserDocument(): UserDocument {
+        return this.mongooseUserDocument;
+    }
 }
 
 export {UserModelImpl};

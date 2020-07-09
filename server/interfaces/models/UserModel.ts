@@ -1,4 +1,5 @@
 import {Identifiable} from "../util/Identifiable";
+import {UserDocument} from "../../models/mongoose/UserModelMongoose";
 
 interface UserModel extends Identifiable {
     getFirstName(): string;
@@ -14,6 +15,7 @@ interface UserModel extends Identifiable {
     setEmail(email: string): void;
     setPassword(password: string): void;
     setToken(token: string): void;
+    getUserDocument(): UserDocument;
 }
 
 export {UserModel}
